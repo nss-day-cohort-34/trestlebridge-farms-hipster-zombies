@@ -20,7 +20,7 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource(IHousing animal)
         {
             _animals.Add(animal);
-            Console.WriteLine("Animal added to field");
+            Console.WriteLine("Animal added to duck house");
             Console.ReadLine();
         }
 

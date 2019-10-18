@@ -21,7 +21,7 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource (IGrazing animal)
         {
             _animals.Add(animal);
-            Console.WriteLine("Animal added to field");
+            Console.WriteLine("Animal added to grazing field");
             Console.ReadLine();
         }
 
