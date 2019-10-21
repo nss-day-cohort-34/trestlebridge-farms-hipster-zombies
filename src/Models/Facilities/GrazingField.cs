@@ -12,6 +12,13 @@ namespace Trestlebridge.Models.Facilities {
 
         private List<IGrazing> _animals = new List<IGrazing>();
 
+
+
+        public List<IGrazing> GetList()
+        {
+            return _animals;
+        } 
+
         public double Capacity {
             get {
                 return _capacity;
@@ -21,7 +28,7 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource (IGrazing animal)
         {
             _animals.Add(animal);
-            Console.WriteLine("Animal added to grazing field");
+            Console.WriteLine($"Animal added to grazing field. Current Animal Count is {_animals.Count}");
             Console.ReadLine();
         }
 
