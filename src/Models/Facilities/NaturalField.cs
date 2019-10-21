@@ -21,7 +21,8 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource (INaturaling seed)
         {
             _seeds.Add(seed);
-            Console.WriteLine("Seed added to field");
+            _capacity = _capacity - 1;
+            Console.WriteLine($"Seed added to field. Remaining capacity is {_capacity}.");
             Console.ReadLine();
         }
 
