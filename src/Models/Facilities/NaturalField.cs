@@ -25,6 +25,12 @@ namespace Trestlebridge.Models.Facilities {
             Console.ReadLine();
         }
 
+         public List<INaturaling> GetList()
+        {
+            return _seeds;
+        }
+
+
 
         public void AddResource (List<INaturaling> seeds)
         {
