@@ -14,10 +14,12 @@ namespace Trestlebridge.Actions {
 
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
-                Console.WriteLine ($"{i + 1}. Grazing Field");
                 GrazingField field = farm.GrazingFields[i];
+                if (field.Capacity > 0) {
+                Console.WriteLine ($"{i + 1}. Grazing Field");
                 Console.Write($"Current animals: {field.GetList().Count}");
                 Console.WriteLine ();
+                }
             }
 
             Console.WriteLine ();
@@ -45,7 +47,12 @@ namespace Trestlebridge.Actions {
 
             for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
+                ChickenHouse house = farm.ChickenHouses[i];
+                if (house.Capacity > 0) {
                 Console.WriteLine ($"{i + 1}. Chicken House");
+                Console.Write($"Current animals: {house.GetList().Count}");
+                Console.WriteLine ();
+                }
             }
 
             Console.WriteLine ();
@@ -73,7 +80,12 @@ namespace Trestlebridge.Actions {
 
             for (int i = 0; i < farm.DuckHouses.Count; i++)
             {
+                DuckHouse house = farm.DuckHouses[i];
+                if (house.Capacity > 0) {
                 Console.WriteLine ($"{i + 1}. Duck House");
+                Console.Write($"Current animals: {house.GetList().Count}");
+                Console.WriteLine ();
+                }
             }
 
             Console.WriteLine ();

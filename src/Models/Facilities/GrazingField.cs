@@ -7,7 +7,7 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
     {
-        private int _capacity = 50;
+        private int _capacity = 20;
         private Guid _id = Guid.NewGuid();
 
         private List<IGrazing> _animals = new List<IGrazing>();
@@ -28,7 +28,8 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource (IGrazing animal)
         {
             _animals.Add(animal);
-            Console.WriteLine($"Animal added to grazing field. Current Animal Count is {_animals.Count}");
+            _capacity = _capacity - 1;
+            Console.WriteLine($"Animal added to grazing field. Current Animal Count is {_animals.Count}. Remaining capacity is {_capacity}.");
             Console.ReadLine();
         }
 
