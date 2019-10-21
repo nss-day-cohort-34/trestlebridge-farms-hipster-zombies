@@ -7,9 +7,13 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class ChickenHouse : IFacility<IHousing>
     {
-        private int _capacity = 15;
+        private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
         private List<IHousing> _animals = new List<IHousing>();
+        public List<IHousing> GetList()
+        {
+            return _animals;
+        } 
         public double Capacity {
             get {
                 return _capacity;
@@ -20,7 +24,8 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource(IHousing animal)
         {
             _animals.Add(animal);
-            Console.WriteLine("Animal added to chicken house");
+            _capacity = _capacity - 1;
+            Console.WriteLine($"Animal added to chicken house. Current Animal Count is {_animals.Count}. Remaining capacity is {_capacity}.");
             Console.ReadLine();
         }
 
