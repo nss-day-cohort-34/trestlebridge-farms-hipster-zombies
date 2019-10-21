@@ -8,8 +8,9 @@ namespace Trestlebridge.Actions {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Grazing field");
             Console.WriteLine ("2. Plowed field");
-            Console.WriteLine ("3. Chicken house");
-            Console.WriteLine ("4. Duck House");
+            Console.WriteLine ("3. Natural field");
+            Console.WriteLine ("4. Chicken house");
+            Console.WriteLine ("5. Duck House");
 
             Console.WriteLine ();
             Console.WriteLine ("Choose what you want to create");
@@ -30,11 +31,16 @@ namespace Trestlebridge.Actions {
                     Console.ReadLine();
                     break;
                 case 3:
+                    farm.AddNaturalField(new NaturalField());
+                    Console.WriteLine("New Natural Field Created, Press Enter to Return to Menu.");
+                    Console.ReadLine();
+                    break;
+                case 4:
                     farm.AddChickenHouse(new ChickenHouse());
                     Console.WriteLine("New Chicken House Created, Press Enter to Return to Menu.");
                     Console.ReadLine();
                     break;
-                case 4:
+                case 5:
                     farm.AddDuckHouse(new DuckHouse());
                     Console.WriteLine("New Duck House Created, Press Enter to Return to Menu.");
                     Console.ReadLine();

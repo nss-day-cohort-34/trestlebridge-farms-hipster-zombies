@@ -5,12 +5,12 @@ using Trestlebridge.Interfaces;
 
 
 namespace Trestlebridge.Models.Facilities {
-    public class PlowField : IFacility<IPlowing>
+    public class NaturalField : IFacility<INaturaling>
     {
-        private int _capacity = 65;
+        private int _capacity = 60;
         private Guid _id = Guid.NewGuid();
 
-        private List<IPlowing> _seeds = new List<IPlowing>();
+        private List<INaturaling> _seeds = new List<INaturaling>();
 
         public double Capacity {
             get {
@@ -18,7 +18,7 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
-        public void AddResource (IPlowing seed)
+        public void AddResource (INaturaling seed)
         {
             _seeds.Add(seed);
             Console.WriteLine("Seed added to field");
@@ -26,7 +26,7 @@ namespace Trestlebridge.Models.Facilities {
         }
 
 
-        public void AddResource (List<IPlowing> seeds)
+        public void AddResource (List<INaturaling> seeds)
         {
             // TODO: implement this...
             throw new NotImplementedException();
@@ -38,7 +38,7 @@ namespace Trestlebridge.Models.Facilities {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Plow field {shortId} has {this._seeds.Count} seeds\n");
+            output.Append($"Natural field {shortId} has {this._seeds.Count} seeds\n");
             this._seeds.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
