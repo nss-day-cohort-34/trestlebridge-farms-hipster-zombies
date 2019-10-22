@@ -3,7 +3,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
-    public class Sesame : IResource, ISeedProducing, IPlowing
+    public class Sesame : IResource, ISeedProducing, IPlowing, IPlantable
     {
          private Guid _id = Guid.NewGuid();
          private string _shortId {
@@ -27,6 +27,11 @@ namespace Trestlebridge.Models.Plants
 
         public override string ToString () {
             return $"Sesame. Yum!";
+        }
+
+        public void Planting()
+        {
+            throw new NotImplementedException();
         }
     }
 }

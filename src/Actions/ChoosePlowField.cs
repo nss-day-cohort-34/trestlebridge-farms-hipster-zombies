@@ -9,12 +9,12 @@ using Trestlebridge.Models.Facilities;
 namespace Trestlebridge.Actions {
     public class ChoosePlowField {
 
-        public static void CollectInput (Farm farm, IPlowing seed) {
+        public static void CollectInput (Farm farm, IPlantable seed) {
             Console.Clear();
 
             for (int i = 0; i < farm.PlowFields.Count; i++)
             {
-                PlowField field = farm.PlowFields[i];
+                 IFacility<IPlantable> field = farm.PlowFields[i];
                 if (field.Capacity > 0) {
                 Console.WriteLine ($"{i + 1}. Plow Field");
                 Console.Write($"Current Plant Seeds: {field.GetList().Count}");

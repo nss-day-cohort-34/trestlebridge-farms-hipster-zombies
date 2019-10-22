@@ -3,7 +3,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
-    public class Sunflower : IResource, ISeedProducing, ICompostProduction, IPlowing, INaturaling
+    public class Sunflower : IResource, ISeedProducing, ICompostProduction, IPlowing, INaturaling, IPlantable
     {
         private Guid _id = Guid.NewGuid();
          private string _shortId {
@@ -36,6 +36,11 @@ namespace Trestlebridge.Models.Plants
         public void Natural()
         {
              Console.WriteLine($"Sunflower {this._shortId} produced {this._seedsProduced} seeds! ");
+        }
+
+        public void Planting()
+        {
+            Console.WriteLine($"Sunflower {this._shortId} produced {this._seedsProduced} seeds! ");
         }
     }
 }

@@ -3,7 +3,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
-    public class WildFlower : IResource, ICompostProduction, INaturaling
+    public class WildFlower : IResource, ICompostProduction, INaturaling, IPlantable
     {
         private Guid _id = Guid.NewGuid();
          private string _shortId {
@@ -25,6 +25,11 @@ namespace Trestlebridge.Models.Plants
         public void Natural()
         {
             Console.WriteLine($"Wildflower {this._shortId} produced {this._compostProduced}kg of Compost! ");
+        }
+
+        public void Planting()
+        {
+            throw new NotImplementedException();
         }
     }
 }

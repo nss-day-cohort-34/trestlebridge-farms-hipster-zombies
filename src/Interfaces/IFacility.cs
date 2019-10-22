@@ -9,5 +9,6 @@ namespace Trestlebridge.Interfaces
 
         void AddResource (T resource);
         void AddResource (List<T> resources);
+        List<T> GetList();
     }
 }
