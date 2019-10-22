@@ -27,7 +27,7 @@ namespace Trestlebridge.Actions {
             {
                 IFacility<IPlantable> field = farm.PlowFields[i];
                 if (field.Capacity > 0) {
-                Console.WriteLine ($"{i + 1}. Plow Field");
+                Console.WriteLine ($"{i + 1 + farm.NaturalFields.Count}. Plow Field");
                 Console.Write($"Current Plant Seeds: {field.GetList().Count}");
                 Console.WriteLine ();
                 }
@@ -40,11 +40,14 @@ namespace Trestlebridge.Actions {
 
             Console.Write ("> ");
             int choice = Int32.Parse(Console.ReadLine ());
-            int index = choice - 1;
+            int indexNatural = choice - 1;
+            int indexPlow = choice - 1 - farm.NaturalFields.Count;
 
-            farm.PlowFields[index].AddResource(seed);
-            farm.NaturalFields[index].AddResource(seed);
-
+            if (choice < farm.NaturalFields.Count) {
+            farm.NaturalFields[indexNatural].AddResource(seed);
+            } else {
+            farm.PlowFields[indexPlow].AddResource(seed);
+            }
 
             /*
                 Couldn't get this to work. Can you?
