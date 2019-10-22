@@ -22,7 +22,7 @@ namespace Trestlebridge.Actions {
                 var plantsGroupedByType = field.GetList().GroupBy(n => n.plant);
                 foreach (var group in plantsGroupedByType)
                 {
-                  Console.WriteLine($"{group.Key}: {group.Count()}");  
+                  Console.WriteLine($"{group.Key}: {group.Count()}");
                 }
 
                 Console.WriteLine ();
@@ -40,15 +40,15 @@ namespace Trestlebridge.Actions {
                 var plantsGroupedByType = field.GetList().GroupBy(n => n.plant);
                 foreach (var group in plantsGroupedByType)
                 {
-                  Console.WriteLine($"{group.Key}: {group.Count()}");  
+                  Console.WriteLine($"{group.Key}: {group.Count()}");
                 }
 
                 Console.WriteLine ();
                 }
             }
 
+if(farm.PlowFields.Count >= 1){
             Console.WriteLine ();
-
             // How can I output the type of animal chosen here?
             Console.WriteLine ($"Place the seeds where?");
 
@@ -61,6 +61,10 @@ namespace Trestlebridge.Actions {
             farm.NaturalFields[indexNatural].AddResource(seed);
             } else {
             farm.PlowFields[indexPlow].AddResource(seed);
+            }
+            }   else{
+                Console.WriteLine("No Field to select from, Please purchase an appropriate facility. ");
+                Console.ReadLine();
             }
 
             /*
