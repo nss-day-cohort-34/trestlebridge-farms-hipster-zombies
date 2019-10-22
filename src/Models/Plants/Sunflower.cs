@@ -15,6 +15,8 @@ namespace Trestlebridge.Models.Plants
         private double _compostProduced = 21.6;
         public string Type { get; } = "Sunflower";
 
+        public string plant {get;} = "Sunflower";
+
         public double Compost()
         {
             return _compostProduced;

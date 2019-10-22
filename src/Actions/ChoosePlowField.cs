@@ -17,7 +17,14 @@ namespace Trestlebridge.Actions {
                  IFacility<IPlantable> field = farm.PlowFields[i];
                 if (field.Capacity > 0) {
                 Console.WriteLine ($"{i + 1}. Plow Field");
-                Console.Write($"Current Plant Seeds: {field.GetList().Count}");
+                Console.WriteLine($"Current Plant Seeds: {field.GetList().Count}");
+
+                var plantsGroupedByType = field.GetList().GroupBy(n => n.plant);
+                foreach (var group in plantsGroupedByType)
+                {
+                  Console.WriteLine($"{group.Key}: {group.Count()}");  
+                }
+
                 Console.WriteLine ();
                 }
             }
