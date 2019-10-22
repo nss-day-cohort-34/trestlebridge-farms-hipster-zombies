@@ -1,3 +1,32 @@
+# Trestlebridge Farms
+
+Trestlebridge Farms is a console app written in C# that allows for management of farming fields and inventory of livestock and plants. That app is initalized in the terminal with the command "dotnet run"
+
+# Main Menu
+
+Upon running the app, the user will be presented with a main menu containing five options. To create a new field, select option 1. To purchase animals, select option 2. To purchase seeds, select option 3. To display a report of the number of fields and the inventory each field contains, select 4. To exit the application and return to the console, select option 5.
+
+# Creating a Field
+
+Before animals or seeds can be purchased, there must be a field created that can support that type of animal or seed. After selecting option 1 on the main menu, the user will be presented with a list of fields to create. Grazing fields can support all animals except for chickens and ducks. Chicken and duck house can only support chicken and ducks, respectively. Plowed fields can support sunflowers and sesame seeds. Natural fields can support sunflowers or wildflowers. The user should enter the number corresponding to the field they wish to create and press enter. Upon pressing enter, the user will see a message confirmation the creation of the field.
+
+# Purchasing Animals
+
+Once an appropriate field (grazing field, chicken house, or duck house) has been created, a user can purchase an animal by selecting option 2 on the main menu. The user should enter the number of the animal they wish to purchase and press enter. Upon pressing enter, the user will see a list of all fields that can support the purchased animal as well as the current population of animals that reside at each field. Note: If a field cannot support the animal being purchased, the field will not be displayed. For example, if a user has purchased a grazing field and a duck house, only the duck house will be displayed when the user purchases a duck. The user should select theh field where they wish the animal to be placed and press enter. The user will then receive a confirmation message of the placement and will be able to view both the current animal count of the field and the remaining capacity of the field. Once the remaining capacity for a field reaches 0, the field will no longer appear on the list of available fields when the user purchases a new animal. As new animals are purchased, the list of available fields will show the total count of each type of animal (cow, goat, pig, etc.) in addition to the total number of animals for that field.
+
+# Purchasing Seeds
+
+Once an appropriate field (plow field or natural field) has been created, a user can purchase seeds by selecting option 3 on the main menu. The user will then be able to view a list of available fields and select where the seeds should be placed. The same rules for animals regarding field availability and capacity apply to seeds as well. For example, a wildflower cannot be placed in a plow field and sesame seeds cannot be placed in a natural field. When a user places seeds in a field, they will see a confirmation message of the placement as well as a current count and remaining capacity for that field. As with animals, the total number of each type of seed placed at a field will be populated as seeds are added to new fields. Note: Sunflowers can be placed in either a natural or plow field.
+
+# Farm Report
+
+In order to view a complete report of the current fields and inventory of the farm, the user should select option 4 from the menu. Each field will receive a unique id comprised of a combination of numbers and letters. Each field will list the total number of animals or seeds placed at the field, and each animal or seed will be displayed as a line item below the field. The line item will list the type of animal or seed and a short message unique to each type of animal or seed. The user can return to the main menu by pressing the return key.
+
+# Exit
+
+To exit the app and return to the console, the user should select option 5. The user will see a farewell message before the app closes.
+
+
 ![trestlebridge farm landscape](./Trestlebridge.jpg)
 
 # Before You Start
