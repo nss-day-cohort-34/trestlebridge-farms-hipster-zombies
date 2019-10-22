@@ -22,13 +22,13 @@ namespace Trestlebridge.Actions {
                 var plantsGroupedByType = field.GetList().GroupBy(n => n.plant);
                 foreach (var group in plantsGroupedByType)
                 {
-                  Console.WriteLine($"{group.Key}: {group.Count()}");  
+                  Console.WriteLine($"{group.Key}: {group.Count()}");
                 }
 
                 Console.WriteLine ();
                 }
             }
-
+if(farm.PlowFields.Count >= 1){
             Console.WriteLine ();
 
             // How can I output the type of animal chosen here?
@@ -39,6 +39,10 @@ namespace Trestlebridge.Actions {
             int index = choice - 1;
 
             farm.PlowFields[index].AddResource(seed);
+}   else{
+                Console.WriteLine("No Field to select from, Please purchase an appropriate facility. ");
+                Console.ReadLine();
+            }
 
             /*
                 Couldn't get this to work. Can you?

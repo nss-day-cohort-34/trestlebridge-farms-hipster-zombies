@@ -19,16 +19,22 @@ namespace Trestlebridge.Actions
                 }
             }
 
-            Console.WriteLine ();
 
+if(farm.DuckHouses.Count >= 1) {
+            Console.WriteLine ();
             // How can I output the type of animal chosen here?
             Console.WriteLine ($"Place the animal where?");
-
             Console.Write ("> ");
             int choice = Int32.Parse(Console.ReadLine ());
             int index = choice - 1;
 
             farm.DuckHouses[index].AddResource(animal);
+}
+            else
+            {
+                 Console.WriteLine("No Field to select from, Please purchase an appropriate facility. ");
+                Console.ReadLine();
+            }
 
             /*
                 Couldn't get this to work. Can you?
