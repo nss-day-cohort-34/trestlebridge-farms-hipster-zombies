@@ -5,12 +5,12 @@ using Trestlebridge.Interfaces;
 
 
 namespace Trestlebridge.Models.Facilities {
-    public class PlowField : IFacility<IPlowing>
+    public class PlowField : IFacility<IPlantable>
     {
         private int _capacity = 65;
         private Guid _id = Guid.NewGuid();
 
-        private List<IPlowing> _seeds = new List<IPlowing>();
+        private List<IPlantable> _seeds = new List<IPlantable>();
 
         public double Capacity {
             get {
@@ -18,7 +18,7 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
-        public void AddResource (IPlowing seed)
+        public void AddResource (IPlantable seed)
         {
             _seeds.Add(seed);
             _capacity = _capacity - 1;
@@ -26,13 +26,13 @@ namespace Trestlebridge.Models.Facilities {
             Console.ReadLine();
         }
 
-        public List<IPlowing> GetList()
+        public List<IPlantable> GetList()
         {
             return _seeds;
         }
 
 
-        public void AddResource (List<IPlowing> seeds)
+        public void AddResource (List<IPlantable> seeds)
         {
             // TODO: implement this...
             throw new NotImplementedException();

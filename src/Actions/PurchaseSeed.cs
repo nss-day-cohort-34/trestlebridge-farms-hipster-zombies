@@ -8,9 +8,8 @@ namespace Trestlebridge.Actions {
     public class PurchaseSeed {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Sesame");
-             Console.WriteLine ("2. Natural Sunflower");
-              Console.WriteLine ("3. Cultivated Sunflower");
-            Console.WriteLine ("4. Wildflower");
+             Console.WriteLine ("2. Sunflower");
+            Console.WriteLine ("3. Wildflower");
             Console.WriteLine ("What are you buying today?");
 
             Console.Write ("> ");
@@ -22,12 +21,9 @@ namespace Trestlebridge.Actions {
                     ChoosePlowField.CollectInput(farm, new Sesame());
                     break;
                     case 2:
-                    ChooseNaturalField.CollectInput(farm, new Sunflower());
+                    ChoosePlantableField.CollectInput(farm, new Sunflower());
                     break;
-                    case 3:
-                    ChoosePlowField.CollectInput(farm, new Sunflower());
-                    break;
-                     case 4:
+                     case 3:
                     ChooseNaturalField.CollectInput(farm, new WildFlower());
                     break;
                     default:
