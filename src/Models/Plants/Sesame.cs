@@ -14,6 +14,8 @@ namespace Trestlebridge.Models.Plants
         private int _seedsProduced = 40;
         public string Type { get; } = "Sesame";
 
+        public string plant {get;} = "Sesame";
+
         public double Harvest () {
             return _seedsProduced;
         }
