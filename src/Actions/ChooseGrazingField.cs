@@ -9,9 +9,10 @@ using Trestlebridge.Models.Facilities;
 namespace Trestlebridge.Actions
 {
     public class ChooseGrazingField {
-        
+
         public static void CollectInput (Farm farm, IGrazing animal) {
             Console.Clear();
+
 
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
@@ -22,22 +23,28 @@ namespace Trestlebridge.Actions
                 var animalsGroupedByType = field._animals.GroupBy(n => n.animal);
                 foreach (var group in animalsGroupedByType)
                 {
-                  Console.WriteLine($"{group.Key}: {group.Count()}");  
+                  Console.WriteLine($"{group.Key}: {group.Count()}");
                 }
                 Console.WriteLine ();
                 }
             }
 
+if(farm.GrazingFields.Count >= 1) {
             Console.WriteLine ();
 
             // How can I output the type of animal chosen here?
             Console.WriteLine ($"Place the animal where?");
+
 
             Console.Write ("> ");
             int choice = Int32.Parse(Console.ReadLine ());
             int index = choice - 1;
 
             farm.GrazingFields[index].AddResource(animal);
+             }else{
+                Console.WriteLine("No Field to select from, Please purchase an appropriate facility. ");
+                Console.ReadLine();
+            }
 
             /*
                 Couldn't get this to work. Can you?
