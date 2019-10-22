@@ -17,6 +17,8 @@ namespace Trestlebridge.Models.Animals {
         public double GrassPerDay { get; set; } = 7.5;
         public string Type { get; } = "Sheep";
 
+        public string animal{get;} = "Sheep";
+
         // Methods
         public void Graze () {
             Console.WriteLine($"Sheep {this._shortId} just ate {this.GrassPerDay}kg of grass");

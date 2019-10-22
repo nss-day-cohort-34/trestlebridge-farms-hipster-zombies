@@ -17,7 +17,12 @@ namespace Trestlebridge.Actions {
                 GrazingField field = farm.GrazingFields[i];
                 if (field.Capacity > 0) {
                 Console.WriteLine ($"{i + 1}. Grazing Field");
-                Console.Write($"Current animals: {field.GetList().Count}");
+                Console.WriteLine($"Current animals: {field.GetList().Count}");
+                var animalsGroupedByType = field._animals.GroupBy(n => n.animal);
+                foreach (var group in animalsGroupedByType)
+                {
+                  Console.WriteLine($"{group.Key}: {group.Count()}");  
+                }
                 Console.WriteLine ();
                 }
             }
