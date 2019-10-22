@@ -8,7 +8,7 @@ Upon running the app, the user will be presented with a main menu containing fiv
 
 # Creating a Field
 
-Before animals or seeds can be purchased, there must be a field created that can support that type of animal or seed. After selecting option 1 on the main menu, the user will be presented with a list of fields to create. Grazing fields can support all animals except for chickens and ducks. Chicken and duck house can only support chicken and ducks, respectively. Plowed fields can support sunflowers and sesame seeds. Natural fields can support sunflowers or wildflowers. The user should enter the number corresponding to the field they wish to create and press enter. Upon pressing enter, the user will see a message confirmation the creation of the field.
+Before animals or seeds are purchased, the user should create a field that can support that type of animal or seed. If the user attempts to purchase animals or seeds before a supporting field has been created, they will see a message informing them that no fields are available and will be redirected to the main menu. After selecting option 1 on the main menu, the user will be presented with a list of fields to create. Grazing fields can support all animals except for chickens and ducks. Chicken and duck house can only support chicken and ducks, respectively. Plowed fields can support sunflowers and sesame seeds. Natural fields can support sunflowers or wildflowers. The user should enter the number corresponding to the field they wish to create and press enter. Upon pressing enter, the user will see a message confirmation the creation of the field.
 
 # Purchasing Animals
 
