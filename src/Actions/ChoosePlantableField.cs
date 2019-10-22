@@ -43,7 +43,7 @@ namespace Trestlebridge.Actions {
             int indexNatural = choice - 1;
             int indexPlow = choice - 1 - farm.NaturalFields.Count;
 
-            if (choice < farm.NaturalFields.Count) {
+            if (choice <= farm.NaturalFields.Count) {
             farm.NaturalFields[indexNatural].AddResource(seed);
             } else {
             farm.PlowFields[indexPlow].AddResource(seed);
